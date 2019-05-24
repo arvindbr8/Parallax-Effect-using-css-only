@@ -1,0 +1,279 @@
+@font-face {
+  font-family: FuturaHeavy;
+  src: url("assets/fonts/FuturaHeavy.otf");
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url("assets/fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Alt\ Regular-webfont.ttf");
+}
+
+.parallax {
+  height: 1000px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--base {
+  transform: translateZ(0);
+  z-index: 3;
+}
+
+.parallax__layer--back {
+  transform: translateZ(-300px) scale(2);
+  z-index: 2;
+}
+
+.parallax__group {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.parallax__group {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+/*--------------------------------------------- */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% / 1.5 Arial;
+  width: 969px;
+  margin: -24px auto;
+  overflow: scroll;
+
+}
+
+.parallax {
+  font-size: 200%;
+}
+
+/* centre the content in the parallax layers */
+.title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#group1 {
+  z-index: 2;
+  height: 915px;
+  margin: -52px;
+}
+
+#group2 {
+  z-index: 3;
+  height: 1000px;
+}
+
+#group3 {
+  z-index: 2;
+  height: 800px;
+}
+
+/*group1*/
+
+.topmenu a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 60px 12px;
+  text-decoration: none;
+  font-size: 9.5px;
+  font-family: FuturaHeavy;
+  letter-spacing: 3px;
+  /* z-index: 100; */
+}
+
+.topmenu a.home {
+  font-size: 25.5px !important;
+  padding: 48px 29px 0 77px !important;
+  letter-spacing: 7px;
+  z-index: 100;
+}
+
+#group1 .parallax__layer--back {
+  background: rgba(0, 0, 0, 1);
+}
+
+#group1_captions {
+  z-index: 3;
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+}
+
+#group1 .parallax__layer--back::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(http://csci571.com/hw/hw3/images/snow1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.89;
+  z-index: 1;
+  background-position: center;
+}
+
+.caption {
+  font-family: FuturaHeavy;
+  line-height: 86px;
+  position: absolute;
+  top: 222px;
+  left: 300px;
+  letter-spacing: 5.5px;
+  text-align: center;
+  z-index: 6;
+  font-size: 81.5px;
+  color: #fff;
+}
+
+.captiondef {
+  font-family: ProximaNova;
+  line-height: 30px;
+  position: absolute;
+  top: 429px;
+  left: 204px;
+  letter-spacing: 1px;
+  text-align: center;
+  z-index: 6;
+  font-size: 17.5px;
+  color: #fff;
+  width: 513px;
+}
+
+.spanbutton {
+  font-family: FuturaHeavy;
+  position: absolute;
+  z-index: 6;
+  top: 651px;
+  left: 409px;
+  color: #000;
+  background-color: #fff;
+  padding: 17px 28px;
+  font-size: 9.5px;
+  letter-spacing: 2px;
+}
+
+/*group2*/
+#group2 .parallax__layer--base {
+  background: #fff;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 160px);
+  height: 700px;
+  width: 700px;
+  grid-gap: 15px;
+  padding-top: 70px;
+  padding-left: 60px;
+  grid-template-areas:
+    "a a b b"
+    "a a b b"
+    "c c d d"
+    "c c d d";
+  align-content: top;
+}
+#snow2 {
+  grid-area: a;
+  background-image: url(http://csci571.com/hw/hw3/images/snow2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#snow3 {
+  grid-area: b;
+  background-image: url(http://csci571.com/hw/hw3/images/snow3.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#snow4 {
+  grid-area: c;
+  background-image: url(http://csci571.com/hw/hw3/images/snow4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#snow5 {
+  grid-area: d;
+  background-image: url(http://csci571.com/hw/hw3/images/snow5.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  position: relative;
+  bottom: -4vh;
+  left: 130px;
+  font-family: ProximaNova;
+  font-size: 14px;
+  width: 700px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/*group3*/
+#group3 .parallax__layer--back::after {
+  background-image: url(http://csci571.com/hw/hw3/images/snow6.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.89;
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#group3 .parallax__layer--back {
+  background: rgba(0, 0, 0, 1);
+}
+
+#group3_captions {
+  z-index: 3;
+  position: relative;
+  top: -50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.caption_g3 {
+  font-family: ProximaNova;
+  line-height: 30px;
+  position: absolute;
+  top: 51%;
+  left: 24%;
+  letter-spacing: 1px;
+  text-align: center;
+  z-index: 6;
+  font-size: 17.5px;
+  color: #fff;
+  width: 513px;
+}
